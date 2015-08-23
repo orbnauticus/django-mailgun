@@ -11,6 +11,12 @@ except ImportError:
     except ImportError:
         from StringIO import StringIO
 
+from six import PY3
+
+if six.PY3:
+    def unicode(text, errors=None):
+        return text
+
 class MailgunAPIError(Exception):
     pass
 
